@@ -1,0 +1,250 @@
+/* Основные стили */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Сайдбар */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    min-height: 100vh;
+    width: 280px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.nav-logo {
+    color: white;
+    padding: 20px;
+    border-bottom: 3px solid #444;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-divider {
+    height: 3px;
+    background-color: #444;
+    width: 100%;
+    margin: 0;
+}
+
+.nav-item {
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: blue;
+    color: white;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    color: white;
+    margin-top: auto;
+    border-top: 3px solid #444;
+}
+
+/* Контент для ВСЕХ страниц */
+.content {
+    margin-left: 280px;
+    padding: 40px;
+    width: calc(100% - 280px);
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Специальный контейнер для страницы контактов */
+.content-container {
+    margin-left: 280px;
+    padding: 40px;
+    width: calc(100% - 280px);
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Карточки (общие для всех страниц) */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Стили для страницы контактов */
+.two-column-layout {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.left-column, .right-column {
+    flex: 1;
+}
+
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.text-container {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contacts-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.contacts-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.contacts-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+/* Кнопки (общие) */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Утилиты */
+.text-center {
+    text-align: center;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #666;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        min-height: auto;
+    }
+
+    .content, .content-container {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .two-column-layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-container,
+    .text-container {
+        padding: 20px;
+    }
+}
